@@ -7,3 +7,6 @@ def index(request):
 
 def product(request):
     return render(request,"shop/product.html")
+
+def about(request):
+    return render(request,"shop/about.html")
