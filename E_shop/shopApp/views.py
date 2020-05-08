@@ -8,9 +8,9 @@ def home(request): # this is home page view
 def product(request): #this is products page view
     return render(request,"shop/product.html")
 
-def about(request): # thos is about page view
+def about(request): # this is about page view
     return render(request,"shop/about.html")
 
 
-def contact(request):
+def contact(request): # this is contact page view
     return render(request,"shop/contact.html")
