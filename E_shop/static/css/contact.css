@@ -1,0 +1,164 @@
+.google-map {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.google-map iframe {
+    width: 100%;
+    height: 485px;
+    border: 0px;
+}
+
+ul.cform {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    float: left;
+}
+
+ul.cform li {
+    margin-bottom: 30px;
+}
+
+ul.cform li:last-child {
+    margin: 0px;
+}
+
+ul.cform li.half {
+    width: 50%;
+    float: left;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.pr-15 {
+    padding-right: 15px;
+}
+
+ul.cform li.full {
+    width: 100%;
+    float: left;
+}
+
+ul.cform .form-control {
+    border: 2px solid #e1e1e1;
+    background: #fafafa;
+    color: #555555;
+    height: 53px;
+    line-height: 49px;
+    padding: 0 20px;
+}
+
+ul.cform textarea.textarea-control {
+    border: 2px solid #e1e1e1;
+    background: #fafafa;
+    color: #555555;
+    padding: 20px;
+    width: 100%;
+    height: 165px;
+    border-radius: 5px;
+}
+
+.cform .fsubmit {
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    background: #66bb6a;
+    border: 0px;
+    height: 55px;
+    line-height: 55px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cform .fsubmit:hover {
+    background: #33691e;
+    color: #fff;
+}
+
+.contact-form h3 {
+    font-weight: 700;
+    margin: 0 0 25px;
+}
+
+.c-info {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.c-info:hover {
+    box-shadow: 0 0 0 0.2rem rgba(102, 187, 106, .25);
+}
+
+.contact-map-info h6,
+.c-info h6 {
+    font-weight: 600;
+    color: #333333;
+    font-size: 20px;
+}
+
+.contact-map-info p,
+.c-info p {
+    margin: 0px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.contact-info {
+    margin-top: 70px;
+}
+
+.contact-info h3 {
+    font-weight: 700;
+    margin: 0 0 25px;
+}
+
+.contact-form {
+    width: 100%;
+    float: left;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.contact-map-info {
+    background: #fff;
+    border-radius: 5px;
+    width: 350px;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    padding: 30px;
+}
+
+.contact-map-info ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.contact-map-info ul li {
+    margin-bottom: 30px;
+}
+
+.contact-map-info ul li:last-child {
+    margin: 0px;
+}
+
+.contact-page {
+    min-height: 100vh;
+    padding: 80px 0;
+    background: #f7f7f7;
+}

@@ -10,3 +10,7 @@ def product(request): #this is products page view
 
 def about(request): # thos is about page view
     return render(request,"shop/about.html")
+
+
+def contact(request):
+    return render(request,"shop/contact.html")
