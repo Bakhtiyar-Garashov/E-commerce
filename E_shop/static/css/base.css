@@ -1,10 +1,9 @@
 #lab_social_icon_footer {
-    padding: 40px 0;
-    background-color: #dedede;
+    padding: 15px 0;
 }
 
 #lab_social_icon_footer a {
-    color: #333;
+    color: rgb(252, 250, 250);
 }
 
 #lab_social_icon_footer .social:hover {
