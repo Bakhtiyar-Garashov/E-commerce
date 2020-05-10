@@ -42,3 +42,20 @@
 #lab_social_icon_footer #social-em:hover {
     color: #f39c12;
 }
+
+
+/* badge css for card icon */
+
+.notify-badge {
+    position: absolute;
+    width: 15px;
+    top: 5px;
+    height: 15px;
+    margin: 2px;
+    background: orange;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+}
