@@ -94,6 +94,8 @@ ul.cform textarea.textarea-control {
     border: 1px solid #eeeeee;
     border-radius: 5px;
     padding: 30px;
+    height: 150px;
+    line-height: 100px;
 }
 
 .c-info:hover {
