@@ -1,6 +1,6 @@
 from django.db import models
 
-from ..accounts.models import Customer
+from accounts.models import Customer
 
 # Create your models here.
 class Product(models.Model):
@@ -14,7 +14,7 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-    customer=models.ForeignKey(Customer,on_delete=models.SET_NULL)
+    customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
     date=models.DateTimeField(auto_now_add=True)
     isCompleted=models.BooleanField(default=False)
     transactionId=models.CharField(max_length=120)
@@ -24,8 +24,8 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    product=models.ForeignKey(Product,on_delete=models.SET_NULL)
-    order=models.ForeignKey(Order,on_delete=models.SET_NULL)
+    product=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True,blank=True)
+    order=models.ForeignKey(Order,on_delete=models.SET_NULL,null=True,blank=True)
     quantity=models.IntegerField(default=0)
     date_added=models.DateTimeField(auto_now_add=True)
 
@@ -34,10 +34,10 @@ class OrderItem(models.Model):
     
 
 class ShippingDetails(models.Model):
-    customer=models.ForeignKey(Customer,on_delete=models.SET_NULL)
-    order=models.ForeignKey(Order,on_delete=models.SET_NULL)
+    customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
+    order=models.ForeignKey(Order,on_delete=models.SET_NULL,null=True,blank=True)
     address=models.CharField(max_length=200)
-    city=models.CharField(max_lenght=50)
+    city=models.CharField(max_length=50)
     zipcode=models.CharField(max_length=20)
     date_added=models.DateTimeField(auto_now_add=True)
 
