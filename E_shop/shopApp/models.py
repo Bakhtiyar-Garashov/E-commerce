@@ -7,7 +7,7 @@ class Product(models.Model):
     name=models.CharField(max_length=200)
     price=models.DecimalField(max_digits=8,decimal_places=2)
     #image
-    isAvailable=models.BooleanField(default=False)
+    isAvailable=models.BooleanField(default=False,verbose_name="Available")
 
     def __str__(self):
         return self.name
@@ -16,7 +16,7 @@ class Product(models.Model):
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
     date=models.DateTimeField(auto_now_add=True)
-    isCompleted=models.BooleanField(default=False)
+    isCompleted=models.BooleanField(default=False,verbose_name="Completed")
     transactionId=models.CharField(max_length=120)
 
     def __str__(self):
@@ -33,7 +33,7 @@ class OrderItem(models.Model):
         return self.product.name
     
 
-class ShippingDetails(models.Model):
+class ShippingDetail(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
     order=models.ForeignKey(Order,on_delete=models.SET_NULL,null=True,blank=True)
     address=models.CharField(max_length=200)
