@@ -47,9 +47,7 @@
 /* badge css for card icon */
 
 .notify-badge {
-    position: absolute;
     width: 15px;
-    top: 5px;
     height: 15px;
     margin: 2px;
     background: orange;
@@ -58,4 +56,18 @@
     border-radius: 50%;
     color: white;
     font-size: 10px;
+}
+
+@media only screen and (min-width: 990px) {
+    .notify-badge {
+        position: absolute;
+        top: 15px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .notify-badge {
+        position: absolute;
+        top: 250px;
+    }
 }
