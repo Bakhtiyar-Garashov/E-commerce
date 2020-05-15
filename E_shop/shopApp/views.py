@@ -13,7 +13,6 @@ def getCategoryData(request,name): # this is home page view
     categories=Category.objects.all()
     category_searched=Category.objects.get(name=name)
     certain_category_entries=Product.objects.filter(category=category_searched.id)
-   
     return render(request,"shop/home.html",context={'products':certain_category_entries,'categories':categories})
 
 

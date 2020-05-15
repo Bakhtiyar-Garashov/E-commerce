@@ -22,6 +22,7 @@ class Category(models.Model):
 class Product(models.Model):
     name=models.CharField(max_length=200)
     price=models.DecimalField(max_digits=8,decimal_places=2)
+    description=models.TextField(default="Some dummy desc for development stage")
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
     #image
     isAvailable=models.BooleanField(default=False,verbose_name="Available")
