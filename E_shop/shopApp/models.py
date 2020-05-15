@@ -3,10 +3,7 @@ from django.db import models
 from accounts.models import Customer
 
 
-
-
-
-
+#models related to ShopApp
 class Category(models.Model):
     name=models.CharField(max_length=100)
     

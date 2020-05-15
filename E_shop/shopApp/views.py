@@ -10,9 +10,9 @@ def home(request): # this is home page view
     return render(request,"shop/home.html",context={'products':products,'categories':categories})
 
 def getCategoryData(request,name): # this is home page view
-    categories=Category.objects.all()
-    category_searched=Category.objects.get(name=name)
-    certain_category_entries=Product.objects.filter(category=category_searched.id)
+    categories=Category.objects.all() 
+    category_searched=Category.objects.get(name=name) # first to find category object by name
+    certain_category_entries=Product.objects.filter(category=category_searched.id) # find related products based on category id
     return render(request,"shop/home.html",context={'products':certain_category_entries,'categories':categories})
 
 
