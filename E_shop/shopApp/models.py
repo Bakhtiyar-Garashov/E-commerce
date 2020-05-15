@@ -2,30 +2,32 @@ from django.db import models
 
 from accounts.models import Customer
 
-CATEGORY_CHOICES=[
-    ("phone","Phones"),
-    ("headphone","Headphones"),
-    ("headset","Headsets"),
-    ("laptop","Laptops")
-]
 
 
 
 
-# Create your models here.
+
+class Category(models.Model):
+    name=models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name="Category"
+        verbose_name_plural="Categories"
+
+
+
 class Product(models.Model):
     name=models.CharField(max_length=200)
     price=models.DecimalField(max_digits=8,decimal_places=2)
+    category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
     #image
     isAvailable=models.BooleanField(default=False,verbose_name="Available")
 
     def __str__(self):
         return self.name
-
-class Category(models.Model):
-    name=models.CharField(choices=CATEGORY_CHOICES,max_length=100)
-    item=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)
-
 
 
 class Order(models.Model):
