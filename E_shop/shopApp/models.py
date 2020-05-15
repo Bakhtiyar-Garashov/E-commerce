@@ -2,6 +2,16 @@ from django.db import models
 
 from accounts.models import Customer
 
+CATEGORY_CHOICES=[
+    ("phone","Phones"),
+    ("headphone","Headphones"),
+    ("headset","Headsets"),
+    ("laptop","Laptops")
+]
+
+
+
+
 # Create your models here.
 class Product(models.Model):
     name=models.CharField(max_length=200)
@@ -11,6 +21,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Category(models.Model):
+    name=models.CharField(choices=CATEGORY_CHOICES,max_length=100)
+    item=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)
+
 
 
 class Order(models.Model):
