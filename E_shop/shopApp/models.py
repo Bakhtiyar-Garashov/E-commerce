@@ -1,6 +1,10 @@
 from django.db import models
-
 from accounts.models import Customer
+import os
+
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 #models related to ShopApp
@@ -21,12 +25,19 @@ class Product(models.Model):
     price=models.DecimalField(max_digits=8,decimal_places=2)
     description=models.TextField(default="Some dummy desc for development stage")
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
-    image = models.ImageField(upload_to='ItemsMainImages', default='default.png',blank=True,null=True)
+    image = models.ImageField(upload_to='item main images', default='default.jpg')
     isAvailable=models.BooleanField(default=False,verbose_name="Available")
 
     def __str__(self):
         return self.name
 
+    @property
+    def imageUrl(self):
+        try:
+            url=self.image.url
+        except:
+            url=os.path.join(BASE_DIR,'static/default.jpg')
+        return url
 
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
