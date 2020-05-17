@@ -21,7 +21,7 @@ class Product(models.Model):
     price=models.DecimalField(max_digits=8,decimal_places=2)
     description=models.TextField(default="Some dummy desc for development stage")
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
-    #image
+    image = models.ImageField(upload_to='ItemsMainImages', default='default.png',blank=True,null=True)
     isAvailable=models.BooleanField(default=False,verbose_name="Available")
 
     def __str__(self):
