@@ -25,7 +25,7 @@ class Product(models.Model):
     price=models.DecimalField(max_digits=8,decimal_places=2)
     description=models.TextField(default="Some dummy desc for development stage")
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
-    image = models.ImageField(upload_to='item main images', default='default.jpg')
+    image = models.ImageField(upload_to='item main images', default='default.jpg',blank=True,null=True)
     isAvailable=models.BooleanField(default=False,verbose_name="Available")
 
     def __str__(self):
@@ -33,11 +33,10 @@ class Product(models.Model):
 
     @property
     def imageUrl(self):
-        try:
-            url=self.image.url
-        except:
-            url=os.path.join(BASE_DIR,'static/default.jpg')
-        return url
+        if not self.image:
+            self.image='default.jpg'
+        
+        return self.image.url
 
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
