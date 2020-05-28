@@ -32,11 +32,11 @@ class Product(models.Model):
         return self.name
 
     @property
-    def imageUrl(self):
+    def imageUrl(self): #set image a default if it is null
         if not self.image:
             self.image='default.jpg'
         
-        return self.image.url
+        return self.image.url #return the image url as property to render
 
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True,blank=True)
