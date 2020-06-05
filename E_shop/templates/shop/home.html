@@ -1,5 +1,6 @@
-{% extends 'shop/base.html' %} {% block body %}
 
+{% extends 'shop/base.html' %} {% block body %}
+{% load static %}
 
 <title>{% block title%}Homepage{% endblock title %}</title>
 <!-- Page Content -->
@@ -29,13 +30,13 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                        <img class="d-block img-fluid" src="{% static 'vendor/images/slider-1.jpg' %}" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                        <img class="d-block img-fluid" src="{% static 'vendor/images/slider-1.jpg' %}" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                        <img class="d-block img-fluid" src="{% static 'vendor/images/slider-1.jpg' %}" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -52,13 +53,14 @@
             {% for product in products %}
               <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{product.imageUrl}}" alt=""></a>
+                        <a href="#"><img width="150" height="220" class="card-img-top" src="{{product.imageUrl}}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#">{{product.name}}</a>
                             </h4>
                             <h5>$ {{product.price}}</h5>
                             <p class="card-text">{{product.description}}</p>
+                            <button type="button" class="btn btn-outline-warning">Add to card</button>
                         </div>
                         <div class="card-footer">
                             <span class="badge badge--warning badge--small">{{product.category}}</span>
