@@ -79,17 +79,17 @@
     color: #fff;
     border-radius: 3rem;
     text-align: center;
-    font-size: 1.6rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 100;
     padding: 0.05rem 0.8rem 0.1rem;
     line-height: inherit;
 }
 
 .badge--warning {
-    background-color: #f1c40f;
+    background-color: #0d8013;
 }
 
 .badge--small {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     padding: 0.1rem 0.65rem 0.2rem;
 }
