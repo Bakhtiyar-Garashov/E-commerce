@@ -46,17 +46,105 @@
 
 /* badge css for card icon */
 
-.notify-badge {
-    width: 25px;
-    padding: 3px;
-    height: 25px;
-    margin: 2px;
-    background: orange;
-    line-height: 15px;
+
+/**
+ * Outer Button styles
+ */
+
+.Button {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    display: inline-block;
+    font: inherit;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: relative;
     text-align: center;
-    border-radius: 50%;
-    color: white;
-    font-size: 10px;
+    text-decoration: none;
+    user-select: none;
+    margin-top: 7px;
+}
+
+
+/**
+   * Override default focus styles so we can apply our own.
+   * Never do this unless you will replace them!!
+   */
+
+.Button:focus {
+    outline: none;
+}
+
+.Button::-moz-focus-inner {
+    border: 0;
+}
+
+.Button-inner {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-weight: 200;
+    height: 2em;
+    min-width: 2em;
+    padding: 0 0.5em;
+    position: relative;
+    transition: 0.2s ease;
+    width: 100%;
+}
+
+.Button:focus .Button-inner {
+    border-color: #fff;
+    box-shadow: 0 0 0 2px #456BD9;
+}
+
+.Button:hover .Button-inner {
+    filter: brightness(1.1);
+}
+
+.Button:active .Button-inner {
+    filter: brightness(0.9);
+}
+
+
+/**
+   * Demo styles
+   */
+
+.Badge {
+    align-items: center;
+    background: #fcc71b;
+    border: 2px solid #fff;
+    border-radius: 99em;
+    color: #fff;
+    display: flex;
+    font-size: 0.7em;
+    font-weight: 400;
+    height: 1.44em;
+    justify-content: center;
+    line-height: 1;
+    min-width: 1.44em;
+    position: absolute;
+    right: -2px;
+    top: -7px;
+}
+
+
+/**
+   * @see https://github.com/suitcss/utils-display
+   */
+
+.u-hiddenVisually {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
 }
 
 .badge {

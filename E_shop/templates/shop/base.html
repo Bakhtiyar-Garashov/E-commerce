@@ -3,62 +3,67 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Shop | {% block title%}{% endblock title %}</title>
 
-    <title>Shop | {% block title%}{% endblock title %} </title>
-
-    <link rel="icon" href="{% static 'vendor/images/icon.svg' %}" type="image/icon type">
+    <link rel="icon" href="{% static 'vendor/images/icon.svg' %}" type="image/icon type" />
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/shop-homepage.css'%}" rel="stylesheet">
-    <link href="{% static 'css/about.css'%}" rel="stylesheet">
-    <link href="{% static 'css/contact.css'%}" rel="stylesheet">
-    <link href="{% static 'css/login.css'%}" rel="stylesheet">
-    <link href="{% static 'css/base.css'%}" rel="stylesheet">
+    <link href="{% static 'css/shop-homepage.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/about.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/contact.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/login.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/base.css'%}" rel="stylesheet" />
 
     <!--FONTAWESOME CDN-->
     <script src="https://kit.fontawesome.com/ae34423a2e.js" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.8.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.8.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">E commerce</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">Home
-              <span class="sr-only">(current)</span>
-            </a>
+                <span class="sr-only">(current)</span>
+              </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'login'%}">Login</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Register</a>
                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#" id='card'><i class="fas fa-cart-arrow-down"> <span class="notify-badge">10</span></i></a>
+                    <li class="nav-item">
+                        <button class="Button">
+                <span class="Button-inner">
+                    <i class="fas fa-cart-arrow-down"></i>
+                </span>
+                <span class="Badge">
+                  4 <span class="u-hiddenVisually">Unread Messages</span>
+                </span>
+              </button>
                     </li>
                 </ul>
             </div>
@@ -70,15 +75,24 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+            <p class="m-0 text-center text-white">
+                Copyright &copy; Your Website 2019
+            </p>
         </div>
         <div class="container">
             <section id="lab_social_icon_footer">
                 <div class="text-center center-block">
-                    <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                    <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                    <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                    <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                    <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i
+            ></a>
+                    <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i
+            ></a>
+                    <a href="https://plus.google.com/+Bootsnipp-page"><i
+                id="social-gp"
+                class="fa fa-google-plus-square fa-3x social"
+              ></i
+            ></a>
+                    <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i
+            ></a>
                 </div>
             </section>
         </div>
@@ -89,7 +103,6 @@
     <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
     <script src="{% static 'vendor/js/login.js'%}"></script>
-
 </body>
 
 </html>
