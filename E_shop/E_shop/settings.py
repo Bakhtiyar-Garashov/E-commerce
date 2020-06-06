@@ -25,7 +25,7 @@ SECRET_KEY = 'm=aklw4_jn!3s%orfdqv6r!(=ox8sd4%av(22+hnw8fj$f$g+)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['172.31.129.170']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'E_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,5 +125,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-MEDIA_URL="/item main images/"
-MEDIA_ROOT=os.path.join(BASE_DIR,"static")
+MEDIA_URL = "/item main images/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "static")

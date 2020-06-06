@@ -61,7 +61,9 @@ class OrderItem(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.product.name
+        if self.product:
+            return self.product.name
+        return "No product related to this"
 
 
 class ShippingDetail(models.Model):
