@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.http import request
 
-from .models import Product, Category
+from .models import Product, Category, Order, OrderItem, ShippingDetail
 
 # Create your views here.
 
@@ -21,6 +21,18 @@ def getCategoryData(request, name):  # this is home page view
     return render(request, "shop/home.html", context={'products': certain_category_entries, 'categories': categories})
 
 
+def card(request):  # this is card page view
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(
+            customer=customer, isCompleted=False)
+        items = order.orderitem_set.all()  # items that related to specific order
+    else:
+        items = []
+    context = {'items': items}
+    return render(request, "shop/card.html", context=context)
+
+
 def product(request):  # this is products page view
     return render(request, "shop/product.html")
 
@@ -31,7 +43,3 @@ def about(request):  # this is about page view
 
 def contact(request):  # this is contact page view
     return render(request, "shop/contact.html")
-
-
-def card(request):  # this is card page view
-    return render(request, "shop/card.html")
