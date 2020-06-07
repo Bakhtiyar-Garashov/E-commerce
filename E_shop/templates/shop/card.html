@@ -19,7 +19,7 @@
                 <!--     BOX     -->
                 {% for item in items %}
                  <div class="border w-full rounded mt-5 flex p-4 justify-between items-center flex-wrap">
-                    <img src="{{item.product.imageUrl}}" class="h-48">
+                    <a href="{{item.product.imageUrl}}" data-lightbox="image-1" data-title="My caption"><img src="{{item.product.imageUrl}}" class="h-48"></a>
                     <div class="w-2/3">
                         <h3 class="text-lg font-medium">{{item.product.title}}</h3>
                         <p class="text-gray-600 text-xs">Sold by <b>{{item.order.customer}}</b></p>
