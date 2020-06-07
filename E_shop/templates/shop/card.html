@@ -25,12 +25,14 @@
                         <p class="text-gray-600 text-xs">Sold by <b>{{item.order.customer}}</b></p>
                         <h4 class="text-red-700 text-xs font-bold mt-1">{{item.product.description}}</h4>
                     </div>
+                    
                     <div>
+                    <br/>
+                    
                         <h4 class="text-3xl font-medium"><sup class="text-lg ml-10 text-purple-800">$</sup> {{item.product.price}}</h4>
-                     
                     </div>
                     <div class="w-full flex justify-between mt-4">
-                        <button class="text-red-700 hover:bg-red-100 px-2">DELETE</button>
+                        <button class="btn btn-outline-warning px-2">DELETE</button>
                         <label class="block uppercase tracking-wide text-gray-700" for="grid-first-name">
                                 QTY
                                 <select class="ml-3 text-sm bg-purple-700 border border-purple-200 text-white p-2 rounded leading-tight" id="grid-state">
