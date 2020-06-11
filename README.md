@@ -7,7 +7,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 
 ```bash
 git clone https://github.com/Bakhtiyar-Garashov/E-commerce.git
-virtualenv venv
+envi\scripts\activate
 pip install -r requirements.txt
 
 ```
