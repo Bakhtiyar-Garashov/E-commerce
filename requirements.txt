@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 asgiref==3.2.7
 Django==3.0.5
 Pillow==7.1.2
 pytz==2020.1
 sqlparse==0.3.1
+=======
+asgiref==3.2.7
+Django==3.0.5
+Pillow==7.1.2
+pytz==2020.1
+sqlparse==0.3.1
+>>>>>>> 9579e9a8612dbef663158bcd013dba84c46db0f1
