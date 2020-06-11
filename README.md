@@ -6,7 +6,8 @@ E commerce is a actively developing project by Django 3.0.
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 
 ```bash
-git clone 
+git clone https://github.com/Bakhtiyar-Garashov/E-commerce.git
+virtualenv venv
 pip install -r requirements.txt
 
 ```
