@@ -9,7 +9,8 @@ from .models import Product, Category, Order, OrderItem, ShippingDetail
 def home(request):  # this is home page view
     products = Product.objects.all()
     categories = Category.objects.all()
-    return render(request, "shop/home.html", context={'products': products, 'categories': categories})
+    item_total = Order.get_card_items
+    return render(request, "shop/home.html", context={'products': products, 'categories': categories, 'total': item_total})
 
 
 def getCategoryData(request, name):  # this is home page view
