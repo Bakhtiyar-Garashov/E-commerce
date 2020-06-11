@@ -11,7 +11,8 @@
             <!--  ToastBar  -->
             <div class="w-full bg-orange-200 text-yellow-900 px-4 py-2 flex items-center">
                 <img src="https://svgsilh.com/svg/151889.svg" class="w-10 block pr-2">
-                <div class="text-sm">Congrats you're eligible for a <b>Coupon Code</b> in this order </div>
+                {% if customer %}
+                <div class="text-sm">Welcome, <b>{{customer}}</b>. You have following items in your card </div>{% endif %}
             </div>
             <!-- Order Summary  -->
             <div>
@@ -71,13 +72,16 @@
                     <button class="px-4 py-4 bg-purple-700 text-white w-full mt-3 rounded shadow font-bold hover:bg-purple- 900"> CHECKOUT</button>
                 </div>
             </div>
+           {% if customer %}
+           
             <div style="margin-left:0.1rem" class="bg-white rounded shadow px-10 py-6 w-full mt-4 flex flex-wrap justify-center lg:w-2/4 lg:ml-3">
                 <div class="pr-8">
-                    <h3 class="text-2xl mt-4 font-bold text-purple-900">Thank You, Alex</h3>
+                    <h3 class="text-2xl mt-4 font-bold text-purple-900">Thank You, {{customer}}</h3>
                     <h4 class="text-sm text-gray-600 font-bold">ORDER #{{order.transactionId}}</h4>
                 </div>
                 <img src="https://image.flaticon.com/icons/svg/1611/1611768.svg" alt="" class="w-24">
             </div>
+           {% endif %}
         </div>
     </div>
 </div>

@@ -31,8 +31,9 @@ def card(request):  # this is card page view
         items = order.orderitem_set.all()  # items that related to specific order
     else:
         items = []
+        customer = None
         order = {'get_card_total': 0, 'get_card_items': 0}
-    context = {'items': items, 'order': order}
+    context = {'items': items, 'order': order, 'customer': customer}
 
     return render(request, "shop/card.html", context=context)
 
