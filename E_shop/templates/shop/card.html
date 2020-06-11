@@ -29,19 +29,24 @@
                     <div>
                         <br/>
 
-                        <h4 class="text-3xl font-medium"><sup class="text-lg ml-10 text-purple-800">$</sup> {{item.product.price}}</h4>
+                        <h4 class="text-2xl font-medium"><sup class="text-lg ml-10 text-purple-800">$</sup> {{item.product.price}}</h4>
+
+                       
                     </div>
                     <div class="w-full flex justify-between mt-4">
-                        <button class="btn btn-outline-warning px-2">DELETE</button>
+                        <button class="btn btn-outline-warning">DELETE</button>
                         <div class="num-block skin-2">
+                         <h4 class="text-2xl font-medium"><sup class="text-rg text-purple-800">$</sup> {{item.get_total}}</h4>
                             <div class="num-in">
                                 <span class="minus dis"></span>
-                                <input type="text" class="in-num" value="{{item.quantity}}" readonly="">
+                                <input type="text" class="in-num" value="{{item.quantity}}">
                                 <span class="plus"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% empty %}
+                <h1>Your card is empty</h1>
 
                 {% endfor %}
 
@@ -51,19 +56,16 @@
         <div class="flex justify-between mt-8 flex-wrap lg:justify-center">
             <div class="bg-white rounded shadow p-2 w-full lg:w-2/4">
                 <div class="w-full bg-orange-200 px-8 py-6">
-                    <h3 class="text-2xl mt-4 font-bold">Price Breakdown</h3>
+                    <h3 class="text-2xl mt-4 font-bold">Card total</h3>
                     <div class="flex justify-between mt-3">
-                        <div class="text-xl text-orange-900 font-bold">Amount</div>
-                        <div class='text-xl text-right font-bold '>$102</div>
+                        <div class="text-xl text-orange-900 font-bold">Total number of items</div>
+                        <div class='text-xl text-right font-bold '>{{order.get_card_items}}</div>
                     </div>
-                    <div class="flex justify-between mt-3">
-                        <div class="text-xl text-orange-900 font-bold">VAT (15%)</div>
-                        <div class='text-xl text-right font-bold'>$12</div>
-                    </div>
+                   
                     <div class="bg-orange-300 h-1 w-full mt-3"></div>
                     <div class="flex justify-between mt-3">
                         <div class="text-xl text-orange-900 font-bold">Total Amount</div>
-                        <div class="text-2xl text-orange-900 font-bold">$114</div>
+                        <div class="text-2xl text-orange-900 font-bold">${{order.get_card_total}}</div>
                     </div>
                     <button class="px-4 py-4 bg-purple-700 text-white w-full mt-3 rounded shadow font-bold hover:bg-purple- 900"> CHECKOUT</button>
                 </div>
@@ -71,7 +73,7 @@
             <div style="margin-left:0.1rem" class="bg-white rounded shadow px-10 py-6 w-full mt-4 flex flex-wrap justify-center lg:w-2/4 lg:ml-3">
                 <div class="pr-8">
                     <h3 class="text-2xl mt-4 font-bold text-purple-900">Thank You, Alex</h3>
-                    <h4 class="text-sm text-gray-600 font-bold">ORDER #5624</h4>
+                    <h4 class="text-sm text-gray-600 font-bold">ORDER #{{order.transactionId}}</h4>
                 </div>
                 <img src="https://image.flaticon.com/icons/svg/1611/1611768.svg" alt="" class="w-24">
             </div>

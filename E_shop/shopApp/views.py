@@ -16,6 +16,7 @@ def getCategoryData(request, name):  # this is home page view
     categories = Category.objects.all()
     # first to find category object by name
     category_searched = Category.objects.get(name=name)
+
     certain_category_entries = Product.objects.filter(
         category=category_searched.id)  # find related products based on category id
     return render(request, "shop/home.html", context={'products': certain_category_entries, 'categories': categories})
@@ -29,7 +30,9 @@ def card(request):  # this is card page view
         items = order.orderitem_set.all()  # items that related to specific order
     else:
         items = []
-    context = {'items': items}
+        order = {'get_card_total': 0, 'get_card_items': 0}
+    context = {'items': items, 'order': order}
+
     return render(request, "shop/card.html", context=context)
 
 
