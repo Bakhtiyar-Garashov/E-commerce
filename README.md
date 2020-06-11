@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-download and activate environment :)
+download and activate environment
 
 
 
