@@ -39,3 +39,9 @@
     border: none;
     text-align: center;
 }
+
+#delete {
+    height: 40px;
+    width: 100px;
+    padding: 5px 15px;
+}

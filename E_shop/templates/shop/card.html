@@ -33,10 +33,11 @@
 
                        
                     </div>
-                    <div class="w-full flex justify-between mt-4">
-                        <button class="btn btn-outline-warning">DELETE</button>
+                    <h4 class="text-2xl font-small">total: $ {{item.get_total}}</h4>
+                    <div class="w-full flex justify-between mt-2">
+                        <button id="delete" class="btn btn-outline-warning">DELETE</button>
                         <div class="num-block skin-2">
-                         <h4 class="text-2xl font-medium"><sup class="text-rg text-purple-800">$</sup> {{item.get_total}}</h4>
+                         
                             <div class="num-in">
                                 <span class="minus dis"></span>
                                 <input type="text" class="in-num" value="{{item.quantity}}">
